@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SpaceTrash Hack: Biological Recycling on Mars</title>
-    <!-- Carga de Three.js para la renderización 3D -->
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <!-- Carga de Tailwind CSS -->
+
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Tipografía Inter para la fuente principal */
+       
         @import url('https://fonts.com/css2?family=Inter:wght@100..900&display=swap');
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0b0b1d; /* Fondo azul oscuro espacial */
-            color: #e2e8f0; /* Texto gris claro */
+            background-color: #0b0b1d; 
+            color: #e2e8f0; 
         }
-        /* Estilos específicos para la temática espacial */
+        
         .card-glow {
             box-shadow: 0 0 15px rgba(100, 100, 255, 0.4), 0 0 5px rgba(255, 255, 255, 0.1);
         }
@@ -35,9 +35,9 @@
             background-image: linear-gradient(90deg, #6d28d9, #3b82f6);
         }
         
-        /* ESTILOS ESPECÍFICOS PARA LA VISUALIZACIÓN 3D */
+        
         .controls {
-            margin: 20px auto; /* Centrar */
+            margin: 20px auto; 
             padding: 15px 30px;
             background: #1c2e46;
             border-radius: 12px;
@@ -47,7 +47,7 @@
             max-width: 600px;
         }
         .canvas-container {
-             /* Wrapper for the canvas to control its size and centering */
+          
             display: flex;
             justify-content: center;
             align-items: center;
@@ -59,25 +59,25 @@
             width: 100% !important;
             max-width: 800px;
             height: 60vh !important;
-            min-height: 400px; /* Ensure visibility on mobile */
+            min-height: 400px; 
             border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(192, 57, 43, 0.3); /* Sombra rojiza para Marte */
+            box-shadow: 0 10px 30px rgba(192, 57, 43, 0.3); 
             margin-bottom: 20px;
             transition: all 0.3s ease;
         }
-        .controls h1 { /* Targeting the h1 inside .controls */
-            color: #e74c3c; /* Rojo de Alerta/Marte */
+        .controls h1 {
+            color: #e74c3c; 
             font-size: 2rem;
             margin-top: 0;
             font-weight: 800;
         }
-        .controls p { /* Targeting the p inside .controls */
+        .controls p { 
             font-size: 0.95rem;
             color: #bdc3c7;
             margin-bottom: 5px;
         }
 
-        /* Estilo para la tabla de validación */
+        
         .validation-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -103,7 +103,7 @@
 </head>
 <body>
 
-    <!-- Encabezado y Resumen -->
+    
     <header class="py-12 gradient-bg border-b border-indigo-700">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center align-items:center">
             <h1 class="text-5xl sm:text-6xl font-extrabold text-white leading-tight mb-4">
@@ -125,7 +125,7 @@
 
     <main class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
 
-        <!-- Sección 1: Desafíos de Marte -->
+     
         <section class="mb-16">
             <h2 class="text-4xl font-bold text-center mb-10 text-indigo-400">Challenges of the Martian Environment </h2>
             <br>
@@ -134,31 +134,31 @@
 
             <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
 
-                <!-- Baja Presión -->
+             
                 <div class="p-6 rounded-xl gradient-bg card-glow transform hover:scale-[1.02] transition duration-300 lg:col-span-1">
                     <h3 class="text-2xl font-semibold mb-3 mars-text">Low Pressure</h3>
                     <p class="text-sm text-gray-400">Extremely thin atmosphere (7–12 millibars). This causes liquid water to boil at 0°C and leads to severe desiccation.</p>
                 </div>
 
-                <!-- Temperatura Extrema -->
+                
                 <div class="p-6 rounded-xl gradient-bg card-glow transform hover:scale-[1.02] transition duration-300 lg:col-span-1">
                     <h3 class="text-2xl font-semibold mb-3 mars-text">Temperature</h3>
                     <p class="text-sm text-gray-400">Temperature swings in Jezero Crater are extreme: daytime highs can approach about −22 °C and nighttime lows can reach around −83 °C.</p>
                 </div>
 
-                <!-- Radiación -->
+               
                 <div class="p-6 rounded-xl gradient-bg card-glow transform hover:scale-[1.02] transition duration-300 lg:col-span-1">
                     <h3 class="text-2xl font-semibold mb-3 mars-text">Radiation</h3>
                     <p class="text-sm text-gray-400">Lack of a strong magnetic field and ozone layer. This results in high levels of UV and ionizing radiation, which can damage or destroy material integrity.</p>
                 </div>
 
-                <!-- Regolito Tóxico -->
+              
                 <div class="p-6 rounded-xl gradient-bg card-glow transform hover:scale-[1.02] transition duration-300 lg:col-span-1">
                     <h3 class="text-2xl font-semibold mb-3 mars-text">Toxic Regolith</h3>
                     <p class="text-sm text-gray-400">Martian soil contains high concentrations of perchlorates, which are strong oxidants and bioinhibitors.</p>
                 </div>
 
-                <!-- Escasez de Agua -->
+                
                 <div class="p-6 rounded-xl gradient-bg card-glow transform hover:scale-[1.02] transition duration-300 lg:col-span-1">
                     <h3 class="text-2xl font-semibold mb-3 mars-text">Lack of Water</h3>
                     <p class="text-sm text-gray-400">Liquid water is unstable on the surface. It exists primarily as subsurface ice.</p>
@@ -166,7 +166,7 @@
             </div>
         </section>
         
-        <!-- Sección 2: La Solución: MARS-INSULATE (Bio-Fabricación Aditiva) -->
+       
         <section class="mb-16">
             <h2 class="text-4xl font-bold text-center mb-10 text-indigo-400">Biopolymer-Regolith Composite Generation via Radiation Curing (BRC)</h2>
             <div class="section-separator w-24 mx-auto mb-12 rounded-full"></div>
@@ -187,7 +187,7 @@
 
             </div>
 
-            <!-- DIAGRAMA DE FLUJO INSERTADO AQUÍ -->
+            
           
             <div class="mt-12 mb-12 flex justify-center">
                 
@@ -200,13 +200,13 @@
             <p class="text-base text-red-400 text-center">
                             Flow Diagram
             </p>
-            <!-- FIN DEL DIAGRAMA DE FLUJO -->
+         
 
         
-            <!-- Inicio de la sección detallada de las fases -->
+      
             <div class="mt-12 grid md:grid-cols-2 gap-8">
                 
-                <!-- Fase 1: Depolimerización -->
+             
                 <div class="p-6 rounded-xl border-t-4 border-indigo-500 gradient-bg">
                     <div class="flex items-center mb-3">
                         <span class="text-4xl mr-3">🔬</span>
@@ -221,7 +221,7 @@
                     </p>    
                 </div>
                 
-                <!-- Fase 2: Biocompuesto -->
+              
                 <div class="p-6 rounded-xl border-t-4 border-indigo-500 gradient-bg">
                     <div class="flex items-center mb-3">
                         <span class="text-4xl mr-3">🧪</span>
@@ -239,7 +239,7 @@
                         - Homogenization: A small amount of a compatible bio-resin is added to create a homogenous "construction ink" ready for molding.
                     </p>
                 </div>
-                <!-- Fase 3: Fabricación/Crecimiento -->
+                
                 <div class="p-6 rounded-xl border-t-4 border-indigo-500 gradient-bg">
                     <div class="flex items-center mb-3">
                         <span class="text-4xl mr-3">🍄</span>
@@ -254,7 +254,7 @@
                     </p>
                 </div>
                 
-                <!-- Fase 4: Curado UV -->
+              
                 <div class="p-6 rounded-xl border-t-4 border-indigo-500 gradient-bg">
                     <div class="flex items-center mb-3">
                         <span class="text-4xl mr-3">✨</span>
@@ -272,11 +272,11 @@
                 </div>
 
             </div>
-            <!-- Fin de la sección detallada de las fases -->
+         
 
         </section>
 
-        <!-- Sección 3: Validación y Análisis Estratégico -->
+       
         <section class="mb-16">
             <h2 class="text-4xl font-bold text-center mb-10 text-red-500">Validation and Strategic Analysis</h2>
             <div class="section-separator w-24 mx-auto mb-12 rounded-full bg-red-500 bg-gradient-to-r from-red-700 to-yellow-500"></div>
@@ -285,7 +285,7 @@
                 The financial and logistical feasibility analysis confirms that in-situ recycling through biotechnology is a mission-essential strategy for Martian self-sufficiency, avoiding costly launches from Earth.
             </p>
 
-            <!-- Key Metrics Cards -->
+            
             <div class="validation-grid mb-12">
                 <div class="validation-item border-red-500">
                     <p class="text-xs text-red-400 font-semibold uppercase mb-1">Estimated Direct Savings</p>
@@ -309,7 +309,7 @@
                 </div>
             </div>
 
-            <!-- Waste Breakdown Analysis -->
+      
             <h3 class="text-3xl font-bold text-center mb-6 text-indigo-300">Waste Analysis: Polymer Origin (45% of Total Trash)</h3>
 
             <div class="lg:max-w-4xl mx-auto rounded-xl gradient-bg p-6 card-glow">
@@ -319,7 +319,7 @@
                     <span class="text-right">Contribution to Recyclable Polymer (%)</span>
                 </div>
                 
-                <!-- Items -->
+               
                 <div class="grid grid-cols-3 py-2 border-b border-gray-700">
                     <span>Containers and Packaging</span>
                     <span class="text-center">30%</span>
@@ -341,7 +341,7 @@
                     <span class="text-right font-bold text-green-400">5%</span>
                 </div>
 
-                <!-- Items NO utilizables para polímero -->
+              
                 <div class="grid grid-cols-3 py-2 text-sm text-gray-500 italic">
                     <span>Food and Organics (Processed separately)</span>
                     <span class="text-center">25%</span>
@@ -353,7 +353,7 @@
                     <span class="text-right">0%</span>
                 </div>
 
-                <!-- Total Row -->
+          
                 <div class="grid grid-cols-3 py-3 border-t-2 border-white mt-2">
                     <span class="font-bold text-lg text-white">TOTALS</span>
                     <span class="text-center font-bold text-lg text-white">100%</span>
@@ -362,7 +362,7 @@
             </div>
         </section>
 
-        <!-- Sección: Asistente de Reciclaje Bio-IA -->
+        
         <section class="mb-16 p-8 rounded-2xl border-2 border-green-500 bg-gray-900 shadow-xl">
             <h2 class="text-4xl font-bold text-center mb-10 text-green-400 flex justify-center items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8 mr-3">
@@ -389,13 +389,13 @@
             </div>
         </section>
 
-        <!-- Sección: Microestructura 3D del Bioladrillo (AL FINAL) -->
+       
         <section class="mt-20">
             <h2 class="text-4xl font-bold text-center mb-10 text-indigo-400">Final Biocomposite Microstructure</h2>
             <div class="section-separator w-24 mx-auto mb-12 rounded-full"></div>
             
             <div class="canvas-container">
-                <!-- Controles y Título del 3D -->
+              
                 <div class="controls">
                     <h1>Bio-Martian Insulation Composite</h1>
                     <p>3D Visualization of the Matrix Binding Regolith, Decomposed Polymer, and Mycelium.</p>
@@ -407,7 +407,7 @@
                     <p>Automatic Rotation <span id="rotation-status" class="font-bold text-yellow-300">Activated</span> | Interactive: Use mouse/touch to rotate and zoom.</p>
                 </div>
 
-                <!-- El canvas 3D se insertará aquí mediante JS -->
+              
             </div>
         </section>
         <section class="mt-20">
@@ -420,7 +420,7 @@
             </center>
         </section>
         <div class="section-separator w-100 mx-auto mb-12 rounded-full"></div>
-        <!-- Pie de página -->
+      
         <footer class="mt-16 pt-8 border-t border-indigo-700 text-center">
             <p class="text-base text-gray-300 mb-4 font-bold">
                 <a href="https://drive.google.com/file/d/1X-I2lq3R3VTRG_nvFKI2fZMj0j5iSW5F/view?usp=sharing" target="_blank" class="text-yellow-400 hover:text-yellow-300 transition duration-200 underline hover:no-underline">
@@ -755,6 +755,7 @@
 
 </body>
 </html>
+
 
 
 
